@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Solver</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rubik's Cube Solver</h1>
+            <p class="subtitle">An interactive Rubik's Cube simulator with solving algorithm. Rotate faces manually, scramble the cube, or let the solver find a solution!</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="cube-section">
+                <h2 class="section-title">Cube Display</h2>
+                <div class="cube-display">
+                    <div class="cube-container" id="cube-display">
+                    </div>
+                </div>
+                <div class="status" id="status">Cube is in solved state</div>
+                
+                <div class="color-legend">
+                    <div class="color-item">
+                        <div class="color-box white"></div>
+                        <span>White (Up)</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box red"></div>
+                        <span>Red (Right)</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box green"></div>
+                        <span>Green (Front)</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box yellow"></div>
+                        <span>Yellow (Down)</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box orange"></div>
+                        <span>Orange (Left)</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box blue"></div>
+                        <span>Blue (Back)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls-section">
+                <h2 class="section-title">Controls</h2>
+                
+                <div class="controls-group">
+                    <h3 class="controls-title">Manual Rotation</h3>
+                    <div class="rotation-controls">
+                        <div class="face-controls">
+                            <button id="front-cw" class="btn"><i class="fas fa-redo"></i> Front CW</button>
+                            <button id="front-ccw" class="btn"><i class="fas fa-undo"></i> Front CCW</button>
+                        </div>
+                        <div class="face-controls">
+                            <button id="back-cw" class="btn"><i class="fas fa-redo"></i> Back CW</button>
+                            <button id="back-ccw" class="btn"><i class="fas fa-undo"></i> Back CCW</button>
+                        </div>
+                        <div class="face-controls">
+                            <button id="left-cw" class="btn"><i class="fas fa-redo"></i> Left CW</button>
+                            <button id="left-ccw" class="btn"><i class="fas fa-undo"></i> Left CCW</button>
+                        </div>
+                        <div class="face-controls">
+                            <button id="right-cw" class="btn"><i class="fas fa-redo"></i> Right CW</button>
+                            <button id="right-ccw" class="btn"><i class="fas fa-undo"></i> Right CCW</button>
+                        </div>
+                        <div class="face-controls">
+                            <button id="up-cw" class="btn"><i class="fas fa-redo"></i> Up CW</button>
+                            <button id="up-ccw" class="btn"><i class="fas fa-undo"></i> Up CCW</button>
+                        </div>
+                        <div class="face-controls">
+                            <button id="down-cw" class="btn"><i class="fas fa-redo"></i> Down CW</button>
+                            <button id="down-ccw" class="btn"><i class="fas fa-undo"></i> Down CCW</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls-group">
+                    <h3 class="controls-title">Actions</h3>
+                    <div class="action-controls">
+                        <button id="scramble" class="btn btn-warning"><i class="fas fa-random"></i> Scramble Cube</button>
+                        <button id="solve" class="btn btn-success"><i class="fas fa-magic"></i> Solve Cube</button>
+                        <button id="reset" class="btn btn-danger"><i class="fas fa-sync-alt"></i> Reset Cube</button>
+                    </div>
+                </div>
+                
+                <div class="controls-group">
+                    <h3 class="controls-title">Current State</h3>
+                    <div class="cube-state">
+                        <input type="text" id="cube-state" readonly value="Solved State">
+                        <button id="copy-state" class="btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-container">
+            <h2 class="section-title">Solution Steps</h2>
+            <div class="steps-list" id="steps-list">
+                <div class="step">No solution steps yet</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
